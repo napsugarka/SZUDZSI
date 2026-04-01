@@ -1,4 +1,3 @@
-/* Közös stílusok */
 body {
     background-color: #E5FCCD;
     margin: 0;
@@ -7,9 +6,10 @@ body {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
-/* Átmenet animáció */
+/* Animációs réteg */
 .transition-overlay {
     position: fixed;
     top: 50%;
@@ -20,28 +20,20 @@ body {
     transform: translate(-50%, -50%);
     z-index: 9999;
     pointer-events: none;
-    transition: width 0.8s ease-in, height 0.8s ease-in;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1), height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* Főoldali sötétzöld tágulás */
 .overlay-to-dark { background-color: #084734; }
-/* Aloldali világoszöld tágulás */
 .overlay-to-light { background-color: #CEF17B; }
+.transition-overlay.active { width: 300vw; height: 300vw; }
 
-.transition-overlay.active {
-    width: 300vw;
-    height: 300vw;
-}
-
-/* CÍM ÉS KÜLSŐ FÉLKÖR */
-.outer-arc {
+/* A NAGY SÖTÉTZÖLD KÖR (A név mögött) */
+.outer-circle {
     position: relative;
-    width: 800px; /* Nagyobb félkör */
-    height: 400px;
-    background-color: transparent; /* Csak keretnek/tárolónak használjuk */
-    border: 5px solid #084734; /* Opcionális: adhatsz neki egy vékony ívet */
-    border-radius: 0 0 400px 400px;
-    margin-top: 100px; /* Lejjebb toljuk az egészet */
+    width: 700px; /* 600px + 50px-50px ráhagyás */
+    height: 700px;
+    background-color: #084734;
+    border-radius: 50%;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,15 +41,15 @@ body {
 
 .title {
     font-size: 100px;
-    color: #084734; /* Fix sötétzöld */
-    margin-top: 20px;
-    z-index: 10;
+    color: #CEF17B; /* Megváltoztattam világosra, hogy látsszon a sötét körön */
+    margin-top: 80px;
+    z-index: 5;
 }
 
-/* BELSŐ FÉLKÖR (Menüsor) */
+/* BELSŐ VILÁGOSZÖLD FÉLKÖR */
 .header-arc {
     position: absolute;
-    top: 150px; /* Belóg a külső ívbe */
+    top: 350px; /* A nagy kör közepétől indul */
     width: 600px;
     height: 300px;
     background-color: #CEF17B;
@@ -77,31 +69,46 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Csak méretváltozás */
     border: none;
-    text-decoration: none;
+    transition: transform 0.3s ease;
+    z-index: 10;
 }
 
-/* Hover: Csak nő, nem mozdul el */
-.button:hover {
-    transform: scale(1.2) !important; 
+/* Pozíciók */
+.btn-1 { top: 60px; left: 40px; }
+.btn-3 { top: 60px; right: 40px; }
+
+/* A JAVÍTOTT KÖZÉPSŐ GOMB: Mindig középen marad! */
+.btn-2 { 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
 }
 
-/* Gombok pozíciója (vízszintes szöveggel) */
-.btn-1 { top: 70px; left: 40px; }
-.btn-2 { bottom: 20px; left: 50%; transform: translateX(-50%); }
-.btn-3 { top: 70px; right: 40px; }
+/* Hover: Csak a nagyítás változik, a helyzet nem */
+.btn-1:hover, .btn-3:hover { transform: scale(1.2); }
+.btn-2:hover { transform: translateX(-50%) scale(1.2); }
 
-/* Vissza gomb az aloldalakon */
-.back-btn {
-    padding: 15px 30px;
+/* VISSZA GOMB STÍLUSA (Aloldalakra) */
+.back-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.back-circle {
+    width: 120px;
+    height: 120px;
     background-color: #CEF17B;
     color: #084734;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
     transition: transform 0.3s;
+    font-size: 18px;
+    border: none;
 }
-.back-btn:hover { transform: scale(1.1); }
+.back-circle:hover { transform: scale(1.2); }
