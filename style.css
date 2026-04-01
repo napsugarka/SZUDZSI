@@ -1,5 +1,5 @@
 body {
-    background-color: #E5FCCD;
+    background-color: #CEF17B;
     margin: 0;
     font-family: 'Bagel Fat One', cursive;
     display: flex;
@@ -50,10 +50,10 @@ body {
 .header-arc {
     position: absolute;
     top: 350px; /* A nagy kör közepétől indul */
-    width: 600px;
-    height: 300px;
+    width: 550px;
+    height: 275px;
     background-color: #CEF17B;
-    border-radius: 0 0 300px 300px;
+    border-radius: 0 0 275px 275px;
     display: flex;
     justify-content: center;
 }
