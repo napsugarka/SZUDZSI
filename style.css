@@ -48,7 +48,7 @@ button, input, select, textarea {
 .title {
     font-size: 100px;
     color: #CEF17B;
-    margin-top: 80px;
+    margin-top: 130px; /* Itt állítsd, ha még lejjebb szeretnéd (pl. 150px) */
     z-index: 5;
 }
 
@@ -63,12 +63,31 @@ button, input, select, textarea {
     display: flex;
     justify-content: center;
 }
+/* GOMBOK KÖRÜLI KERETEK */
+.button-container {
+    position: absolute;
+    width: 100px; /* Előírt szélesség */
+    height: 180px; /* Úgy állítottam be, hogy ne lógjon ki a körből */
+    border: 3px solid #084734; /* Sötétzöld szegély */
+    border-radius: 50px; /* Lekerekített sarkok (félkörszerű vég) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* A gomb a keret tetején kezdődik */
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+/* Pozíciók a kereteknek (a gombok helyett ezeket mozgatjuk) */
+.container-1 { top: 40px; left: 35px; transform: rotate(-10deg); }
+.container-3 { top: 40px; right: 35px; transform: rotate(10deg); }
+.container-2 { bottom: -20px; left: 50%; transform: translateX(-50%); height: 150px; }
 
 /* FŐOLDALI GOMBOK */
 .button {
-    position: absolute;
-    width: 90px;
-    height: 90px;
+position: relative; /* Kikerültek az abszolút pozícióból */
+    width: 80px;
+    height: 80px;
     background-color: #084734;
     color: #CEF17B;
     border-radius: 50%;
@@ -78,10 +97,12 @@ button, input, select, textarea {
     cursor: pointer;
     border: none;
     transition: transform 0.3s ease;
-    z-index: 10;
     font-size: 14px;
+    font-family: 'Bagel Fat One', cursive !important;
 }
-
+.button:hover {
+    transform: scale(1.1);
+}
 .btn-1 { top: 60px; left: 40px; }
 .btn-3 { top: 60px; right: 40px; }
 .btn-2 { bottom: 20px; left: 50%; transform: translateX(-50%); }
