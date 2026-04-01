@@ -29,8 +29,8 @@ body {
 /* A NAGY SÖTÉTZÖLD KÖR (A név mögött) */
 .outer-circle {
     position: relative;
-    width: 700px; /* 600px + 50px-50px ráhagyás */
-    height: 700px;
+    width: 650px; /* 600px + 50px-50px ráhagyás */
+    height: 650px;
     background-color: #084734;
     border-radius: 50%;
     margin-top: 50px;
