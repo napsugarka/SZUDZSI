@@ -81,8 +81,8 @@ button, .button, .back-circle {
 }
 
 /* Keretek pontos helye a félkörön belül */
-.container-1 { top: 30px; left: 50px; transform: rotate(-15deg); }
-.container-3 { top: 30px; right: 50px; transform: rotate(15deg); }
+.container-1 { top: 30px; left: 50px; transform: rotate(-25deg); }
+.container-3 { top: 30px; right: 50px; transform: rotate(25deg); }
 .container-2 { bottom: 20px; left: 50%; transform: translateX(-50%); height: 150px; }
 
 /* 6. GOMBOK STÍLUSA */
@@ -101,9 +101,14 @@ button, .button, .back-circle {
     font-size: 14px;
 }
 
-/* Hovernél csak nő, nem mozdul el a keretben */
-.button:hover {
-    transform: scale(1.1);
+/* ELLEN-FORGATÁS: A szöveg vízszintes marad a dőlt keretben is */
+.container-1 .button { transform: rotate(25deg); } /* Visszaforgatjuk a balt */
+.container-3 .button { transform: rotate(-25deg); } /* Visszaforgatjuk a jobbat */
+
+/* Hover: Nagyítás + Megtartjuk az ellenforgatást! */
+.container-1 .button:hover { transform: rotate(25deg) scale(1.1); }
+.container-3 .button:hover { transform: rotate(-25deg) scale(1.1); }
+.container-2 .button:hover { transform: scale(1.1); }
 }
 
 /* 7. SÖTÉT ALOLDALAK STÍLUSA */
