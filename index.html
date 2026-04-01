@@ -4,134 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SZUDZSI</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #E5FCCD;
-            margin: 0;
-            font-family: 'Bagel Fat One', cursive;
-            overflow-x: hidden; /* Ne legyen vízszintes csúszka */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Áttűnés animációhoz a kör */
-        .transition-overlay {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background-color: #084734;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            pointer-events: none;
-            transition: width 0.8s ease-in, height 0.8s ease-in;
-        }
-
-        .transition-overlay.active {
-            width: 300vw;
-            height: 300vw;
-        }
-
-        /* SZUDZSI szöveg - Középre igazítva */
-        .title {
-            margin-top: 40px;
-            font-size: clamp(50px, 10vw, 100px); /* Rugalmas méret */
-            animation: colorChange 2s infinite alternate;
-            text-align: center;
-        }
-
-        @keyframes colorChange {
-            from { color: #084734; }
-            to { color: #CEF17B; }
-        }
-
-        /* A félkör alakú menüsor */
-        .header-arc {
-            position: relative;
-            width: 600px;
-            height: 300px;
-            background-color: #CEF17B;
-            /* Félkör: felül egyenes, alul kerek */
-            border-radius: 0 0 300px 300px;
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        /* Gombok közös stílusa */
-        .button {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background-color: #084734; /* Sötétzöld alap */
-            color: #CEF17B;           /* Világoszöld szöveg */
-            border-radius: 50%;       /* Kör alak */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            cursor: pointer;
-            transition: transform 0.3s, scale 0.3s;
-            border: none;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .button:hover {
-            transform: scale(1.1) !important; /* Kicsit megnő ha rámutatsz */
-        }
-
-        /* Gombok elhelyezése az ív mentén */
-        /* Bal gomb */
-        .btn-1 {
-            top: 80px;
-            left: 50px;
-            transform: rotate(-15deg);
-        }
-
-        /* Középső gomb */
-        .btn-2 {
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Jobb gomb */
-        .btn-3 {
-            top: 80px;
-            right: 50px;
-            transform: rotate(15deg);
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="transition-overlay" id="overlay"></div>
+    <div class="transition-overlay overlay-to-dark" id="overlay"></div>
 
-    <div class="title">SZUDZSI</div>
-
-    <div class="header-arc">
-        <div class="button btn-1" onclick="pageTransition('kepek.html')">KÉPEK</div>
-        <div class="button btn-2" onclick="pageTransition('rolam.html')">RÓLAM</div>
-        <div class="button btn-3" onclick="pageTransition('info.html')">INFÓ</div>
+    <div class="outer-arc">
+        <div class="title">SZUDZSI</div>
+        
+        <div class="header-arc">
+            <div class="button btn-1" onclick="pageTransition('kepek.html')">KÉPEK</div>
+            <div class="button btn-2" onclick="pageTransition('rolam.html')">RÓLAM</div>
+            <div class="button btn-3" onclick="pageTransition('info.html')">INFÓ</div>
+        </div>
     </div>
 
     <script>
         function pageTransition(url) {
             const overlay = document.getElementById('overlay');
             overlay.classList.add('active');
-            
-            // Megvárjuk az animációt (0.8mp), majd átlépünk az új oldalra
-            setTimeout(() => {
-                window.location.href = url;
-            }, 800);
+            // 0.8 másodperc múlva vált oldalt (ennyi az animáció)
+            setTimeout(() => { window.location.href = url; }, 800);
         }
     </script>
 
