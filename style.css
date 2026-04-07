@@ -83,7 +83,7 @@ button, .button, .back-circle {
 /* Keretek pontos helye a félkörön belül */
 .container-1 { top: 30px; left: 50px; transform: rotate(0deg); }
 .container-3 { top: 30px; right: 50px; transform: rotate(0deg); }
-.container-2 { bottom: 0px; left: 50%; transform: translateX(-50%); height: 230px; }
+.container-2 { bottom: 0px; left: 50%; transform: translateX(-50%); height: 240px; }
 
 /* 6. GOMBOK STÍLUSA */
 .button {
@@ -128,8 +128,8 @@ button, .button, .back-circle {
 .back-circle {
     width: 120px;
     height: 120px;
-    background-color: #CEF17B;
-    color: #084734;
+    background-color: #084734;
+    color: #CEF17B;
     border-radius: 50%;
     display: flex;
     align-items: center;
