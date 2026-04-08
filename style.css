@@ -59,15 +59,15 @@ button, .button, .back-circle {
 /* 4. VILÁGOSZÖLD MENÜ FÉLKÖR */
 .header-arc {
     position: absolute;
-    top: 320px; 
-    width: 550px;
-    height: 275px;
+    top: 300px; 
+    width: 500px;
+    height: 250px;
     background-color: #CEF17B;
-    border-radius: 0 0 275px 275px;
+    border-radius: 0 0 250px 250px;
     /* Gombok vízszintes elrendezése */
     display: flex;
     justify-content: center;
-    gap: 50px; /* Távolság a gombok között */
+    gap: 60px; /* Távolság a gombok között */
     padding-top: 30px; /* 20px távolság a tetejétől */
 }
 
