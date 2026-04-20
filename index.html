@@ -11,25 +11,32 @@
 
     <div class="sun-container">
         <div class="rings-container" id="rings">
-            <div class="ring ring-1"></div> <div class="ring ring-2"></div> <div class="ring ring-3"></div> <div class="ring ring-4"></div> </div>
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+            <div class="ring ring-4"></div>
+        </div>
 
         <div class="main-circle">
             <div class="title">SZUDZSI</div>
-            <div class="button-wrapper">
-                <button class="button" onclick="startTransition('rolam.html')">RÓLAM</button>
-                <button class="button" onclick="startTransition('kepek.html')">KÉPEK</button>
+            
+            <div class="mouth-arc">
+                <div class="tooth-container">
+                    <button class="button" onclick="startTransition('rolam.html')">RÓLAM</button>
+                </div>
+                <div class="tooth-container">
+                    <button class="button" onclick="startTransition('kepek.html')">KÉPEK</button>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Átmenet animáció
         function startTransition(url) {
-            // A teljes gyűrűs rendszert forgatjuk
             document.getElementById('rings').classList.add('spinning');
             setTimeout(() => {
                 window.location.href = url;
-            }, 1500); // 1.5 másodperc forgás után vált
+            }, 1500);
         }
     </script>
 </body>
