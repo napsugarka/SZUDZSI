@@ -9,14 +9,16 @@
 </head>
 <body>
 
-    <div class="transition-overlay" id="overlay"></div>
-
-    <div class="sun-container">
-        <div class="rays-container" id="rays"></div>
+    <div class="sun-container" id="mainContainer">
+        <div class="rays-layer">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+            <div class="ring ring-4"></div>
+        </div>
 
         <div class="main-circle">
             <div class="title">SZUDZSI</div>
-            
             <div class="mouth-arc">
                 <div class="tooth-container">
                     <button class="button" onclick="startTransition('rolam.html')">RÓLAM</button>
@@ -29,28 +31,12 @@
     </div>
 
     <script>
-        const raysContainer = document.getElementById('rays');
-        for (let i = 0; i < 8; i++) {
-            const angle = i * 45;
-            const group = document.createElement('div');
-            group.className = 'ray-group';
-            // A translate(260px) kitolja a sugarakat az arc szélén túlra
-            group.style.transform = `translate(-50%, -50%) rotate(${angle}deg) translate(260px) rotate(90deg)`;
-            
-            for (let j = 1; j <= 4; j++) {
-                const segment = document.createElement('div');
-                segment.className = `ray-segment s${j}`;
-                group.appendChild(segment);
-            }
-            raysContainer.appendChild(group);
-        }
-
         function startTransition(url) {
-            document.getElementById('rays').classList.add('spinning');
+            // Csak nagyítás történik, spirális forgás nélkül
+            document.getElementById('mainContainer').classList.add('active');
             setTimeout(() => {
-                document.getElementById('overlay').classList.add('active');
-            }, 400);
-            setTimeout(() => { window.location.href = url; }, 1500);
+                window.location.href = url;
+            }, 800);
         }
     </script>
 </body>
