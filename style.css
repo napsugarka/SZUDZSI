@@ -138,6 +138,12 @@ button, .button, .back-circle {
 /* Ez az új osztály csak ott fog működni, ahol külön kéred */
 .egyedi-szoveg {
     font-family: 'Quicksand', sans-serif !important;
+    /* EZ A LÉNYEG: */
+    max-width: 700px;    /* Ez korlátozza a hasáb szélességét */
+    margin: 0 auto;      /* Ez teszi középre a hasábot */
+    padding: 20px;       /* Biztonsági sáv, hogy mobilon ne érjen a széléhez */
+    
+    text-align: center;  /* Ha azt szeretnéd, hogy a sorok is középre igazodjanak */
     font-size: 18px; /* Itt állíthatod a méretét */
     line-height: 1.5; /* Hogy kényelmesebb legyen olvasni */
     text-transform: none; /* Kikapcsolja a csupa nagybetűt, ha a body-n az van */
