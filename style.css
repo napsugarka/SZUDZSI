@@ -151,7 +151,6 @@ button, .button, .back-circle {
 /* Az egyedi szövegen belüli linkek stílusa */
 .egyedi-szoveg a {
     color: #CEF17B; /* Ugyanolyan világoszöld, mint a szöveg */
-    text-decoration: underline; /* Maradjon aláhúzva, hogy látsszon: kattintható */
     font-weight: bold;
     transition: opacity 0.3s;
 }
