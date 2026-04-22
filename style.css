@@ -73,7 +73,7 @@ button, .button, .back-circle {
 /* 5. GOMBOK KÖRÜLI KERETEK - Felfelé nyúló "U" alakok */
 .button-container {
     width: 100px;
-    height: 180px;
+    height: 170px;
     border: 5px solid #084734;
     border-radius: 50px; /* Visszaállítva a teljes kapszula formára */
     display: flex;
@@ -82,7 +82,7 @@ button, .button, .back-circle {
     align-items: center;
     padding-bottom: 10px;
     box-sizing: border-box;
-    background-color: #CEF17B; /* Adjunk neki hátteret, hogy ne látsszon át alatta a sötét kör széle */
+    
     
     /* EZ A LÉNYEG: */
     margin-top: -40px; /* Minél nagyobb a negatív szám, annál feljebb lóg ki */
